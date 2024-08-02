@@ -13,7 +13,7 @@ export default function Todo() {
       setTodos(storedTodos);
     }
   }, []);
-  const completedtodos = todos.filter((todo) => todo.done === true).length;
+  const completedtodos = todos.filter((todo) => todo.status === "done").length;
   const inprogresstodos = todos.filter(
     (todo) => todo.status === "inprogress"
   ).length;
