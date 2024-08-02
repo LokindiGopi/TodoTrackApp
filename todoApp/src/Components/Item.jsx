@@ -23,14 +23,21 @@ export default function Item({ item, todos, setTodos }) {
   return (
     <div
       ref={drag}
-      className={`cursor-grab ${isDragging ? "opacity-25" : "opacity-100"}`}
+      className={`cursor-grab ${
+        isDragging ? "opacity-25" : "opacity-100"
+      } transition-opacity duration-300`}
     >
-      <div key={item.id} className="p-3 m-3 font-semibold">
-        <span className={item.status === "done" ? "line-through" : ""}>
+      <div
+        key={item.id}
+        className="p-3 m-3 font-semibold bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
+      >
+        <span
+          className={item.status === "done" ? "line-through text-gray-500" : ""}
+        >
           {item.name}
         </span>
         {item.status === "todo" && (
-          <span className="float-right">
+          <span className="float-right ml-2">
             <button onClick={() => handleDelete(item)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

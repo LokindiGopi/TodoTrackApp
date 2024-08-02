@@ -29,11 +29,14 @@ export default function TodoHeader({ item, todos, setTodos }) {
   };
 
   return (
-    <div ref={drop} className="shadow-md m-8 bg-slate-50 rounded-2xl">
+    <div
+      ref={drop}
+      className="shadow-md m-4 sm:m-6 md:m-8 bg-slate-50 rounded-2xl"
+    >
       <div className="bg-slate-200 text-center p-3 font-bold rounded-lg">
         {item}
       </div>
-      <div>
+      <div className="p-4">
         <TodoItem tasklist={tasklist} todos={todos} setTodos={setTodos} />
       </div>
     </div>
