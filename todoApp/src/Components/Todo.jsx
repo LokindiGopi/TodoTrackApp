@@ -13,10 +13,10 @@ export default function Todo() {
       setTodos(storedTodos);
     }
   }, []);
-  const completedtodos =
-    todos && todos.filter((todo) => todo.done === true).length;
-  const inprogresstodos =
-    todos && todos.filter((todo) => todo.status === "inprogress").length;
+  const completedtodos = todos.filter((todo) => todo.done === true).length;
+  const inprogresstodos = todos.filter(
+    (todo) => todo.status === "inprogress"
+  ).length;
   const totaltodos = todos.length;
   return (
     <div>
